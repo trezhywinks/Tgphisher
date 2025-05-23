@@ -4,20 +4,20 @@ cd /root/Tgphisher || { echo "Failed to enter the directory => /root/werbot"; ex
 
 tgphisher(){
   case "$1 $2" in
-    "--help")
+    "-t --help")
       sudo bash help.sh 
       ;;
-    "--start --telegram")
+    "-s --telegram")
       server 
       ;;
-    "--delete session.txt")
+    "-d session.txt")
     rm -rf /root/Tgphisher/script/session.txt
       ;;
-    "--start --phisher")
+    "-s --phisher")
       host
       ;;
     *)
-      echo "Erro! Unknown command: $1 $2"
+      echo "Erro! Unknown command: $1"
       exit 1
       ;;
   esac

