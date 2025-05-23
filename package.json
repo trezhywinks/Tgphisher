@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "main": "node main.js",
-    "tgphisher": "nodemon main.js"
+    "tgphisher": "nodemon main.js",
+    "telegram": "node script/server.js"
   },
   "keywords": [],
   "author": "",
@@ -17,9 +18,11 @@
     "colors": "^1.4.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "input": "^1.0.1",
     "nodemon": "^3.1.10",
     "path": "^0.12.7",
     "qrcode-terminal": "^0.12.0",
+    "slugify": "^1.6.6",
     "telegram": "^2.26.22"
   }
 }
