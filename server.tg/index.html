@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<!--
+https://my.telegram.org/img/favicon-32x32.png
+-->
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Telegram Bot</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
+<title>Telegram Bot</title>
 </head>
 <style>
 *{
@@ -34,9 +38,9 @@ justify-cotent: space-between;
 tex-align: center;
 width: 870px;
 padding: 10px;
-margin-top: 30%;
 margin: 0 auto 10px;
 }
+
 
 input:focus{
 border: 1px solid #3193e4;
@@ -48,12 +52,31 @@ padding: 10px;
 .image{
 text-align: center;
 }
+
+.fong{
+font-size: 30px;
+}
+@media(max-width: 999px){
+.container_server_telegra{
+display: block;
+width: 100%;
+}
+.inputs{
+width: 70%;
+margin: 0 auto 10px;
+}
+.fong{
+font-size: 17px;
+}
+}
+
+
 </style>
 <body>
 <div class="container_server_telegra">
 <div class="image">
 <img src="https://my.telegram.org/img/tl_card_decentralized.gif" width="140" height="140"/>
-<h2>Welcome to Telegram Bot</h2>
+<h2 class="fong">Welcome to Telegram Bot</h2>
 </div>
 <div class="inputs">
 <label for="number"> Your number</label><br>
