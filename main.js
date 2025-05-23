@@ -8,10 +8,14 @@ const server = "http://localhost:8080";
 console.log("Hi, user. welcome to script main.js".white.bold);
 
 
-//app.use(express.static("server.tg"));
+app.use(express.static('server.tg'));
 
-app.get('/', (req, res) => {
+app.get('/server', (req, res) => {
 res.sendFile(path.join(__dirname, 'server.tg', 'index.html'));
+});
+
+app.get('/ico', (req, res) => {
+res.sendFile(path.join(__dirname, 'server.tg', 'favicon.ico'))
 });
 
 qrcode.generate(server, {small: true}, function(qrcode) {
