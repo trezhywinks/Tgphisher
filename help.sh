@@ -21,7 +21,7 @@ ${RED}
   ░      ░ ░   ░ ░░        ░  ░░ ░ ▒ ░░  ░  ░   ░  ░░ ░   ░     ░░   ░
                ░           ░  ░  ░ ░        ░   ░  ░  ░   ░  ░   ░    ░ 
   ${WHITE}+------------------------------------------------------------+
-  ${WHITE}| Author       : Tgphisher   (${MAGENTA}shell-script${WHITE}) - (${MAGENTA}javascript${WHITE})   | ${RED}░
+  ${WHITE}| Author       : Tgphisher   (${BLACK}shell-script${WHITE}) - (${BLACK}javascript${WHITE})   | ${RED}░
   ${WHITE}| Version      : 99.1.0                                      | ${RED}░
   ${WHITE}| Description  : WineWinks likes red, why red?               |
   ${WHITE}+------------------------------------------------------------+

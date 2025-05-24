@@ -10,7 +10,7 @@ const http = require('http');
 const port = "4040";
 const server = "http://localhost:4040";
 console.log("Hi, user. welcome to script main.js".white.bold);
-const host = "127.0.1"
+const host = "127.0.0.1"
 const logs = [];
 app.use(cors());
 app.use(express.json());
