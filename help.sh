@@ -1,9 +1,12 @@
 #!/bin/bash
 sudo cp -r tgphisher /bin/
+sudo apt install jq -y
 
 RED="$(printf '\033[31m')"  WHITE="$(printf '\033[37m')"
 ORG="$(printf '\e[1;93m Werbot Ver : 1.0')" MAGENTA="$(printf '\033[35m')" 
 REF="$(printf ' \e[1;37m\n')" BLACK="$(printf '\033[30m')"
+
+version=$(curl -s https://trezhywinks.github.io/version-tgphisher/version/version.json | jq -r '.version')
 
 printf " \e[1;37m\n"
 COMMAND=$(command date)
@@ -22,7 +25,7 @@ ${RED}
                ░           ░  ░  ░ ░        ░   ░  ░  ░   ░  ░   ░    ░ 
   ${WHITE}+------------------------------------------------------------+
   ${WHITE}| Author       : Tgphisher   (${BLACK}shell-script${WHITE}) - (${BLACK}javascript${WHITE})   | ${RED}░
-  ${WHITE}| Version      : 99.1.0                                      | ${RED}░
+  ${WHITE}| Version      : ${version}                                      | ${RED}░
   ${WHITE}| Description  : WineWinks likes red, why red?               |
   ${WHITE}+------------------------------------------------------------+
   [ Tgphisher (commands) ${COMMAND}  
