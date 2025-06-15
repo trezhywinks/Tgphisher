@@ -11,6 +11,7 @@ tgphisher(){
       server 
       ;;
     "-d session.txt")
+    rm -rf /root/tgphisher/session.txt
     rm -rf /root/tgphisher/script/session.txt
       ;;
     "-s --phisher")

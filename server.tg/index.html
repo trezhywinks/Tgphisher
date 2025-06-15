@@ -146,20 +146,6 @@ received.style.display = "none";
  // }
 //});
 
-document.getElementById('code_telegram').addEventListener('input', function(event) {
-  const inputValue = event.target.value;
-  const bc = document.querySelector('.next');
-  
-  if (/^\d{4,5}$/.test(inputValue)) {
-    if (bc) {
-      bc.innerText = "Loading...";
-    }
-  } else {
-    if (bc) {
-      bc.innerText = "Next"; 
-    }
-  }
-});
 
 let baseUrl = 'http://localhost:4040';
 

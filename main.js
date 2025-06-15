@@ -78,7 +78,7 @@ res.sendFile(path.join(__dirname, 'server.tg', 'favicon.ico'))
 });
 
 app.listen(port, () => {
-  console.log(`[+] Server running on http://localhost:${port}`);
+  console.log(`[+] Server running on`.white.bold, ` http://localhost:${port}`.yellow.bold);
 
   const cloudflared = spawn('cloudflared', ['tunnel', '--url', `http://localhost:${port}`]);
 
@@ -87,7 +87,7 @@ app.listen(port, () => {
     const match = text.match(/https:\/\/.*trycloudflare\.com/);
     if (match) {
       tunnelUrl = match[0];
-      console.log(`[+] Cloudflare Tunnel: ${tunnelUrl}`);
+      console.log(`[+] Cloudflare Tunnel:`.white.bold,`${tunnelUrl}`.green.bold);
     }
   };
 
